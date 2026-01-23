@@ -1,0 +1,76 @@
+{
+  "apple.stackexchange.com": {
+    "marca": "Apple",
+    "tipo": "q&a",
+    "descripcion": "Stack Exchange oficial para Apple",
+    "selectores": {
+      "contenedor": "article, .question-summary, .s-post-summary",
+      "titulo": "h3, .question-hyperlink, .s-post-summary--content-title",
+      "texto": ".excerpt, .s-post-summary--content-excerpt, .post-text",
+      "autor": ".user-details, .s-user-card--link, .owner",
+      "fecha": ".relativetime, .s-user-card--time"
+    },
+    "estrategia": "foro",
+    "needs_js": false
+  },
+
+  "cultofmac.com": {
+    "marca": "Apple",
+    "tipo": "blog_tecnologico",
+    "descripcion": "Blog sobre Apple con análisis",
+    "selectores": {
+      "contenedor": "article, .post-item, .featured-article",
+      "titulo": "h2, h3, .entry-title, .post-title",
+      "texto": ".entry-excerpt, .post-excerpt, p",
+      "autor": ".author, .byline, .post-author",
+      "fecha": "time, .post-date, .date"
+    },
+    "estrategia": "blog",
+    "needs_js": true
+  },
+
+  "9to5mac.com": {
+    "marca": "Apple",
+    "tipo": "blog_noticias",
+    "descripcion": "Noticias y rumores sobre Apple",
+    "selectores": {
+      "contenedor": "article, .post, .latest-news-item",
+      "titulo": "h2, h3, .entry-title, .post-title",
+      "texto": ".entry-excerpt, .post-excerpt, .excerpt",
+      "autor": ".author, .byline, .post-author",
+      "fecha": "time, .post-date, .date"
+    },
+    "estrategia": "blog",
+    "needs_js": true
+  },
+
+  "discussions.apple.com": {
+    "marca": "Apple",
+    "tipo": "foro_oficial",
+    "descripcion": "Foros oficiales de soporte de Apple",
+    "selectores": {
+      "contenedor": "article, .discussion-item, .thread",
+      "titulo": "h2, h3, .discussion-title, .thread-title",
+      "texto": ".message-content, .post-body, .content",
+      "autor": ".author, .user-name, .username",
+      "fecha": "time, .post-date, .date"
+    },
+    "estrategia": "foro",
+    "needs_js": true
+  },
+
+  "forums.macrumors.com": {
+    "marca": "Apple",
+    "tipo": "foro_comunidad",
+    "descripcion": "Comunidad de usuarios Apple",
+    "selectores": {
+      "contenedor": "article, .structItem, .thread",
+      "titulo": "h3, .structItem-title, .thread-title",
+      "texto": ".structItem-snippet, .snippet, .message-content",
+      "autor": ".username, .author, .user-link",
+      "fecha": "time, .structItem-minor, .dateTime"
+    },
+    "estrategia": "foro",
+    "needs_js": true
+  }
+}
