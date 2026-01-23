@@ -42,6 +42,15 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
 4. **Demo interactivo**  
    Presentaciones en vivo: scraping rápido + preguntas en tiempo real + reporte PDF.
 
+## Diagramas
+<img width="8192" height="6682" alt="Apple Sentiment RAG Flow-2026-01-23-212701" src="https://github.com/user-attachments/assets/e5c1e9c0-2b18-4f1d-9673-948762d3cc7c" />
+
+<img width="8192" height="2443" alt="Start Decision Options Flow-2026-01-23-212715" src="https://github.com/user-attachments/assets/5e9152d2-8b36-4ed5-9cc7-fafae5165818" />
+<img width="2614" height="5305" alt="Calificación en SIUG Flow-2026-01-23-212729" src="https://github.com/user-attachments/assets/ebe08009-6fdf-45cc-843f-38abcc100d88" />
+
+<img width="2614" height="5305" alt="Calificación en SIUG Flow-2026-01-23-212738" src="https://github.com/user-attachments/assets/e643372a-7885-42a1-be2c-84724851d4dd" />
+
+
 ## Tecnologías utilizadas
 
 - **Lenguaje**: Python 3.11  
@@ -118,17 +127,6 @@ RAG → Indexa en Chroma con embeddings MiniLM → retrieval rápido + reranking
 Análisis → Ollama genera reporte JSON estructurado y responde preguntas interactivas con memoria.
 Salidas → Reporte JSON/PDF + gráficos + interacción en consola (próximo: Tkinter).
 
-## Demo en vivo (lo que mostrarás)
-
-Ejecutar python main_integrado.py
-Scraping rápido (YouTube + Reddit)
-Preguntas en vivo:
-"¿Qué opinan del precio de Apple?"
-"¿Por qué algunos cambian a Android?"
-"¿Cuáles son las principales fortalezas?"
-
-Mostrar reporte JSON + gráficos
-Explicar diagramas en pantalla
 
 ## Limitaciones y mejoras futuras
 
