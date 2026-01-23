@@ -87,6 +87,7 @@ Genera reporte JSON + gráficos
 Entra en modo interactivo (pregunta lo que quieras)
 
 ## Estructura del repositoriosemillero-ia-percepcion-marca-apple/
+```
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
@@ -108,8 +109,8 @@ Entra en modo interactivo (pregunta lo que quieras)
 └── utils/
     ├── visualizacion.py
     └── downloader.py
-
-##Cómo funciona (resumen técnico)
+```
+## Cómo funciona (resumen técnico)
 
 Scraping → Recolecta comentarios reales de múltiples fuentes con retrasos para evitar bloqueos.
 Limpieza → Elimina duplicados (exactos, fuzzy con rapidfuzz, semánticos con cosine) y filtra solo opiniones reales.
@@ -117,7 +118,7 @@ RAG → Indexa en Chroma con embeddings MiniLM → retrieval rápido + reranking
 Análisis → Ollama genera reporte JSON estructurado y responde preguntas interactivas con memoria.
 Salidas → Reporte JSON/PDF + gráficos + interacción en consola (próximo: Tkinter).
 
-##Demo en vivo (lo que mostrarás)
+## Demo en vivo (lo que mostrarás)
 
 Ejecutar python main_integrado.py
 Scraping rápido (YouTube + Reddit)
@@ -129,7 +130,7 @@ Preguntas en vivo:
 Mostrar reporte JSON + gráficos
 Explicar diagramas en pantalla
 
-##Limitaciones y mejoras futuras
+## Limitaciones y mejoras futuras
 
 X/Twitter aún sin datos (problemas de cuentas)
 Sentiment básico (VADER) → futuro: modelo multilingüe
