@@ -17,7 +17,7 @@ class ScraperYouTube:
                 part="snippet",
                 videoId=video_id,
                 maxResults=max_results,
-                order="relevance"  # Orden por relevancia o "time"
+                order="relevance"  
             )
             response = request.execute()
 
@@ -34,7 +34,7 @@ class ScraperYouTube:
             print(f"✅ Extraídos {len(comentarios)} comentarios de video {video_id}")
             return comentarios
         except HttpError as e:
-            print(f"❌ Error YouTube API: {e}")
+            print(f"Error YouTube API: {e}")
             return []
 
     def scrape_comentarios_keywords(self, keywords, max_videos=20, max_comments_per_video=50):

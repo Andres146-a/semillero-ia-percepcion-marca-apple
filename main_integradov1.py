@@ -3,36 +3,39 @@ import sys
 from langchain_openai import OpenAIEmbeddings
 import ollama
 import json
+import matplotlib
 from datetime import datetime
-import time 
-import os
 from dotenv import load_dotenv
-#from sympy import Si
 from rapidfuzz import fuzz, process
-# Cargar variables de entorno
-load_dotenv()
+
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
-# Importar tu sistema existente
-sys.path.append('.')
+
 from utils.visualizacion import generar_pie_sentiment, generar_wordcloud
-from scrapers.scraper_x import ScraperX
-from scrapers.scraper_reddit import ScraperReddit
-#from scrapers.scraper_redditV2 import ScraperReddit
+
+
 from langchain.memory import ConversationSummaryBufferMemory
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_community.llms import Ollama
 from scrapers.scraper_instagram import ScraperInstagram
 #from scrapers.scraper_youtube import ScraperYouTube
+#from scrapers.scraper_redditV2 import ScraperReddit
 from scrapers.scraper_yotubeV2 import ScraperYouTube
+from scrapers.scraper_reddit import ScraperReddit
+
 from rag.rag_manager import RAGManager
 from scrapers.scraper_hibrido import ScraperHibrido
 from utils.downloader import DescargadorInteligente
 from processors.normalizador import NormalizadorMVP
-from scrapers.scraper_tiktok import ScraperTikTok
-import matplotlib
+
+
+# Importar tu sistema existente
+sys.path.append('.')
+# Cargar variables de entorno
+load_dotenv()
 matplotlib.use('Agg')
+
 # Configuración del modelo Ollama
 MODELO_OLLAMA = "llama3.1:8b"
 
@@ -40,11 +43,11 @@ MODELO_OLLAMA = "llama3.1:8b"
 
 
 def analizar_con_ollama(rag_manager, stats=None, query="percepción general de Apple", modo="reporte", modelo=MODELO_OLLAMA):
-    print("🔍 Buscando comentarios relevantes en RAG...")
+    print("Buscando comentarios relevantes en RAG")
     docs = rag_manager.buscar_relevantes(query, k=100 if modo == "reporte" else 100)
     print(f"→ Recuperados {len(docs)} documentos (k=100)")
 
-    # Deduplicación rápida por contenido (elimina idénticos)
+    # Deduplicación rápida por contenido (elimina comentarios idénticos)
     unique_docs = []
     seen_texts = set()
     for doc in docs:
@@ -55,7 +58,7 @@ def analizar_con_ollama(rag_manager, stats=None, query="percepción general de A
 
     docs = unique_docs
 
-    # Después de: docs = unique_docs
+    print(f"→ Después de dedup básico: {len(docs)} únicos")
 
     try:
         def dedup_fuzzy_retrieval(docs_list, threshold=88):
@@ -76,7 +79,9 @@ def analizar_con_ollama(rag_manager, stats=None, query="percepción general de A
         print(f"→ Después de fuzzy en retrieval: {len(docs)} únicos")
     except:
         pass
-    # Semántica (con threshold más bajo para más diversidad)
+    
+
+    # Deduplicación semántica (elimina comentarios muy similares)
     try:
         embeddings = rag_manager.embeddings.embed_documents([d.page_content for d in docs])
         import numpy as np
@@ -89,7 +94,7 @@ def analizar_con_ollama(rag_manager, stats=None, query="percepción general de A
             unique_sem.append(docs[i])
             sims = cosine_similarity([emb], embeddings[i+1:])[0]
             for j, s in enumerate(sims):
-                if s >= 0.90:  # ← Baja a 0.90 para más diversidad (prueba 0.92 si aún hay pocos únicos)
+                if s >= 0.90:  
                     used_sem.add(i + 1 + j)
 
         docs = unique_sem
@@ -98,7 +103,7 @@ def analizar_con_ollama(rag_manager, stats=None, query="percepción general de A
         print(f"⚠️ Semántica falló: {e}")
         
         
-    # Reranking simple (requiere: pip install sentence-transformers)
+    # Se usa Reranking con Cross-Encoder para mejorar relevancia
     try:
         from sentence_transformers import CrossEncoder
         reranker = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')  # Modelo ligero y efectivo
@@ -114,8 +119,7 @@ def analizar_con_ollama(rag_manager, stats=None, query="percepción general de A
         print(f"→ Después reranking: {len(docs)} docs reordenados por relevancia")
     except Exception as e:
         print(f"⚠️ Reranking falló: {e}")
-    # Opcional: ordena por relevancia (si tu retriever tiene score)
-    # docs = sorted(docs, key=lambda d: d.metadata.get('score', 0), reverse=True)
+  
 
     print(f"→ Después de deduplicación: {len(docs)} documentos únicos")
 
@@ -427,10 +431,9 @@ def main():
     normalizador = NormalizadorMVP()
     scraper = ScraperHibrido(descargador, normalizador)
     youtube_scraper = ScraperYouTube()
-    tiktok_scraper = ScraperTikTok()
     reddit_scraper = ScraperReddit()
-    x_scraper = ScraperX()
-    ig_scraper = ScraperInstagram()
+
+
 
     print("\n🚀 FASE 1: Web Scraping + YouTube")
     print("=" * 40)
@@ -619,23 +622,7 @@ def main():
             print(f"   ⚠️ Sin resultados en r/{sub}")
 
 
-    #Scaper X
-    print("\n🚀 FASE 1.7: Scraping X (Twitter) Replies")
-    print("=" * 40)
-
-    # Usa las mismas keywords que en YouTube o crea unas específicas
-    x_keywords = [
-        "iPhone 16 review español",
-        "AirPods Pro 2 unboxing",
-        "MacBook Pro M4 review",
-        
-    ]
-
-    for kw in x_keywords:
-        print(f"   🔍 Buscando en X: '{kw}'...")
-        replies = x_scraper.scrape_sync(kw, max_posts=3, max_replies_per_post=25)
-        todos_datos.extend(replies)
-        print(f"   ✅ Extraídos {len(replies)} elementos de X para '{kw}'")
+   
 
     print(f"   Total acumulado hasta ahora: {len(todos_datos)} elementos")
    
@@ -669,7 +656,7 @@ def main():
         print(f"Deduplicación fuzzy ({threshold}%): {len(items)} → {len(unique)} elementos")
         return unique
 
-    # ¡Aquí la llamas!
+     
     todos_datos = deduplicar_fuzzy(todos_datos, threshold=90)
     print(f"Total después de fuzzy + exacta: {len(todos_datos)} elementos")
     print(f"Reducción por fuzzy: {len(unique) - len(todos_datos)} elementos eliminados")
