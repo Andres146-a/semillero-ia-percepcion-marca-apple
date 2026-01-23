@@ -1,0 +1,26 @@
+# Entorno y cachés
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Sensibles
+.env
+accounts.db
+
+# Bases y persistencia
+apple_sentiment_db/
+chroma_db/
+chroma_db_percepcion/
+*.db
+*.sqlite3
+
+# Resultados pesados/temporales
+datos_scrapeados_*.*
+reporte_percepcion_*.*
+ragas_ready_sample_*.*
+*.json
+*.txt
+*.png
+*.log
+cache_descargas.json
