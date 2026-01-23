@@ -7,7 +7,7 @@ import matplotlib
 from datetime import datetime
 from dotenv import load_dotenv
 from rapidfuzz import fuzz, process
-
+from ragas.testset.generator import TestsetGenerator
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
@@ -18,7 +18,7 @@ from langchain.memory import ConversationSummaryBufferMemory
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_community.llms import Ollama
-from scrapers.scraper_instagram import ScraperInstagram
+
 #from scrapers.scraper_youtube import ScraperYouTube
 #from scrapers.scraper_redditV2 import ScraperReddit
 from scrapers.scraper_yotubeV2 import ScraperYouTube
@@ -896,10 +896,8 @@ def main():
     # ───────────────────────────────────────────────────────────────
 
     try:
-        from ragas.testset.generator import TestsetGenerator
         from langchain_openai import ChatOpenAI
         from langchain_core.documents import Document
-
         print("\n🧪 Generando testset sintético con Ragas (puede tardar)...")
 
         # Convertir a LangChain Documents
