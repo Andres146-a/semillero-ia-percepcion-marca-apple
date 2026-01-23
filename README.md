@@ -127,17 +127,6 @@ RAG → Indexa en Chroma con embeddings MiniLM → retrieval rápido + reranking
 Análisis → Ollama genera reporte JSON estructurado y responde preguntas interactivas con memoria.
 Salidas → Reporte JSON/PDF + gráficos + interacción en consola (próximo: Tkinter).
 
-## Demo en vivo (lo que mostrarás)
-
-Ejecutar python main_integrado.py
-Scraping rápido (YouTube + Reddit)
-Preguntas en vivo:
-"¿Qué opinan del precio de Apple?"
-"¿Por qué algunos cambian a Android?"
-"¿Cuáles son las principales fortalezas?"
-
-Mostrar reporte JSON + gráficos
-Explicar diagramas en pantalla
 
 ## Limitaciones y mejoras futuras
 
