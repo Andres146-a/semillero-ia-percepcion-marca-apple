@@ -86,7 +86,7 @@ Limpia y procesa
 Genera reporte JSON + gráficos
 Entra en modo interactivo (pregunta lo que quieras)
 
-##Estructura del repositoriosemillero-ia-percepcion-marca-apple/
+## Estructura del repositoriosemillero-ia-percepcion-marca-apple/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
