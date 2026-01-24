@@ -79,15 +79,15 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
     pip install -r requirements.txt
 
 ## Cómo correr
-# 1. Activa entorno virtual (opcional)
+### 1. Activa entorno virtual (opcional)
 python -m venv venv
 .\venv\Scripts\activate  # Windows
 source venv/bin/activate  # Linux/Mac
 
-# 2. Instala dependencias
+### 2. Instala dependencias
 pip install -r requirements.txt
 
-# 3. Corre el agente
+### 3. Corre el agente
 python main_integrado.py
 
 Scrapea datos frescos
