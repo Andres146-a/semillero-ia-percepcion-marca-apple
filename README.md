@@ -78,7 +78,7 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
    ```bash
     pip install -r requirements.txt
 
-##Cómo correr
+## Cómo correr
 # 1. Activa entorno virtual (opcional)
 python -m venv venv
 .\venv\Scripts\activate  # Windows
