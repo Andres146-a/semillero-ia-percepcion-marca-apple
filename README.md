@@ -114,7 +114,6 @@ Entra en modo interactivo (pregunta lo que quieras)
 │   ├── scraper_heuristicas.py
 │   ├── scraper_youtube.py
 │   ├── scraper_reddit.py
-│   └── scraper_x.py
 └── utils/
     ├── visualizacion.py
     └── downloader.py
