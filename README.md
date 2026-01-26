@@ -69,24 +69,30 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
 ### Requisitos
 
 1. Python 3.11+  
-2. Ollama instalado y modelo descargado:
+2. Ollama instalado y modelo descargado de manera local:
+   ```bash
    ollama pull llama3.1:8b
-   ollama serve
-3. Dependencias:
+   ```
+   2.1 Solo si no tiene el ollama corriendo: 
+      ```md   
+      ollama serve
+      ```
+4. Dependencias:
    ```bash
     pip install -r requirements.txt
-
+   ```
 ## Cómo correr
 ### 1. Activa entorno virtual (opcional)
 python -m venv venv
+
 .\venv\Scripts\activate  # Windows
 source venv/bin/activate  # Linux/Mac
 
 ### 2. Instala dependencias
-pip install -r requirements.txt
+pip install -r requirements_advanced.txt
 
 ### 3. Corre el agente
-python main_integrado.py
+python main_integradov1.py
 
 Scrapea datos frescos
 Limpia y procesa
