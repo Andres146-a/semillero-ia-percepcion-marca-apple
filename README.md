@@ -108,27 +108,36 @@ Genera reporte JSON + gráficos
 Entra en modo interactivo (pregunta lo que quieras)
 
 ## Estructura del repositoriosemillero-ia-percepcion-marca-apple/
-```
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── main_integrado.py
+```text
+web-Scraping/
 ├── config/
 │   └── patrones.json
+├── detectors/
+│   └── detector_tipo.py
+├── drivers/
+│   └── msedgedriver.exe
+├── models/
+│   ├── datos_comunes.py
+│   └── __init__.py
 ├── processors/
 │   └── normalizador.py
 ├── rag/
 │   └── rag_manager.py
 ├── scrapers/
 │   ├── base.py
+│   ├── scraper_heuristicas.py
 │   ├── scraper_hibrido.py
 │   ├── scraper_patrones.py
-│   ├── scraper_heuristicas.py
-│   ├── scraper_youtube.py
 │   ├── scraper_reddit.py
-└── utils/
-    ├── visualizacion.py
-    └── downloader.py
+│   ├── scraper_selenium.py
+│   ├── scraper_youtubeV2.py
+│   └── scraper_youtubeV2v2.py
+├── utils/
+│   ├── downloader.py
+│   └── visualizacion.py
+├── main_integradov1.py
+├── README.md
+└── requirements_advanced.txt
 ```
 ## Cómo funciona (resumen técnico)
 
