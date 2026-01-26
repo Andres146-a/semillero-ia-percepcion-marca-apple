@@ -4,11 +4,14 @@
 **Tema asignado**: Agente que analiza percepción de marca mediante web scraping de comentarios e interacciones en redes sociales y foros.
 
 **Integrantes**  
-- Matyas (@tu-github-username) – Desarrollador principal, scraping, RAG y LLM
+- Matyas Cañola Salazar (@Andres146-a)
+- José Jeremy Samaniego Lago
+- Cerezo Indio Cristian Ariel
+- Piza Lema Ricardo Arturo
 
 **Video de presentación**  
 [Ver demo en YouTube / Google Drive]  
-(Duración: ~8 minutos – incluye intro, explicación técnica, demo en vivo y conclusiones)
+
 
 **Repositorio**: https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple
 
