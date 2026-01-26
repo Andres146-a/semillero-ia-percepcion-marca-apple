@@ -21,6 +21,7 @@ reporte_percepcion_*.*
 ragas_ready_sample_*.*
 *.json
 *.txt
+!requirements_advanced.txt
 *.png
 *.log
 cache_descargas.json
