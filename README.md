@@ -80,10 +80,7 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
       ```md   
       ollama serve
       ```
-4. Dependencias:
-   ```bash
-    pip install -r requirements_advanced.txt
-   ```
+
 ## Cómo correr
 
 ### 1. Clonar repositorio:
