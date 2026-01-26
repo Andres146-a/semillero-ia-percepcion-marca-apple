@@ -92,11 +92,13 @@ source venv/bin/activate  # Linux/Mac
 ```
 
 ### 2. Instala dependencias
+```md  
 pip install -r requirements_advanced.txt
-
+```
 ### 3. Corre el agente
+```md  
 python main_integradov1.py
-
+```
 Scrapea datos frescos
 Limpia y procesa
 Genera reporte JSON + gráficos
