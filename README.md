@@ -57,8 +57,6 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
 - **Scraping**:  
   - YouTube: yt-dlp / API no oficial  
   - Reddit: PRAW  
-  - X/Twitter: twscrape  
-  - Instagram/Foros: Selenium + BeautifulSoup  
 - **Procesamiento**: rapidfuzz (dedup fuzzy), sentence-transformers (reranking CrossEncoder)  
 - **RAG**: LangChain + Chroma (vector store) + HuggingFace Embeddings (all-MiniLM-L6-v2)  
 - **LLM**: Ollama (Llama 3.1 8B local)  
