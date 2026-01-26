@@ -5,9 +5,9 @@ import ollama
 import json
 import matplotlib
 from datetime import datetime
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from rapidfuzz import fuzz, process
-from ragas.testset.generator import TestsetGenerator
+
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
@@ -21,9 +21,9 @@ from langchain_community.llms import Ollama
 
 #from scrapers.scraper_youtube import ScraperYouTube
 #from scrapers.scraper_redditV2 import ScraperReddit
+
 from scrapers.scraper_yotubeV2 import ScraperYouTube
 from scrapers.scraper_reddit import ScraperReddit
-
 from rag.rag_manager import RAGManager
 from scrapers.scraper_hibrido import ScraperHibrido
 from utils.downloader import DescargadorInteligente
@@ -33,7 +33,7 @@ from processors.normalizador import NormalizadorMVP
 # Importar tu sistema existente
 sys.path.append('.')
 # Cargar variables de entorno
-load_dotenv()
+#load_dotenv()
 matplotlib.use('Agg')
 
 # Configuración del modelo Ollama
@@ -896,8 +896,10 @@ def main():
     # ───────────────────────────────────────────────────────────────
 
     try:
+        from ragas.testset.generator import TestsetGenerator
         from langchain_openai import ChatOpenAI
         from langchain_core.documents import Document
+
         print("\n🧪 Generando testset sintético con Ragas (puede tardar)...")
 
         # Convertir a LangChain Documents

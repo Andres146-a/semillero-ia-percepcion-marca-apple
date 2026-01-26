@@ -26,8 +26,7 @@ class ScraperSelenium:
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--window-size=1920,1080')
         
-        # RUTA MANUAL AL DRIVER DESCARGADO
-        driver_path = r"C:\Users\Matias\web-Scraping\drivers\msedgedriver.exe"  # Cambiá si lo guardaste en otro lado
+        driver_path = r"C:\Users\Matias\web-Scraping\drivers\msedgedriver.exe"   
         service = Service(executable_path=driver_path)
         self.driver = webdriver.Edge(service=service, options=options)
         
