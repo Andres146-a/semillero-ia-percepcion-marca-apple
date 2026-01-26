@@ -79,14 +79,17 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
       ```
 4. Dependencias:
    ```bash
-    pip install -r requirements.txt
+    pip install -r requirements_advanced.txt
    ```
 ## Cómo correr
 ### 1. Activa entorno virtual (opcional)
 python -m venv venv
-
+   ```md  
 .\venv\Scripts\activate  # Windows
+```
+```
 source venv/bin/activate  # Linux/Mac
+```
 
 ### 2. Instala dependencias
 pip install -r requirements_advanced.txt
