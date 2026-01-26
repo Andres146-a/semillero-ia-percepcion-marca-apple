@@ -10,7 +10,7 @@
 [Ver demo en YouTube / Google Drive]  
 (Duración: ~8 minutos – incluye intro, explicación técnica, demo en vivo y conclusiones)
 
-**Repositorio**: [https://github.com/tu-usuario/semillero-ia-percepcion-marca-apple](https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple/tree/main)
+**Repositorio**: https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple
 
 ## Descripción del proyecto
 
@@ -57,8 +57,6 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
 - **Scraping**:  
   - YouTube: yt-dlp / API no oficial  
   - Reddit: PRAW  
-  - X/Twitter: twscrape  
-  - Instagram/Foros: Selenium + BeautifulSoup  
 - **Procesamiento**: rapidfuzz (dedup fuzzy), sentence-transformers (reranking CrossEncoder)  
 - **RAG**: LangChain + Chroma (vector store) + HuggingFace Embeddings (all-MiniLM-L6-v2)  
 - **LLM**: Ollama (Llama 3.1 8B local)  
@@ -71,25 +69,36 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
 ### Requisitos
 
 1. Python 3.11+  
-2. Ollama instalado y modelo descargado:
-   ollama pull llama3.1:8b
-   ollama serve
-3. Dependencias:
+2. Ollama instalado y modelo descargado de manera local:
    ```bash
-    pip install -r requirements.txt
-
-##Cómo correr
-# 1. Activa entorno virtual (opcional)
+   ollama pull llama3.1:8b
+   ```
+   2.1 Solo si no tiene el ollama corriendo: 
+      ```md   
+      ollama serve
+      ```
+4. Dependencias:
+   ```bash
+    pip install -r requirements_advanced.txt
+   ```
+## Cómo correr
+### 1. Activa entorno virtual (opcional)
 python -m venv venv
+   ```md  
 .\venv\Scripts\activate  # Windows
+```
+```
 source venv/bin/activate  # Linux/Mac
+```
 
-# 2. Instala dependencias
-pip install -r requirements.txt
-
-# 3. Corre el agente
-python main_integrado.py
-
+### 2. Instala dependencias
+```md  
+pip install -r requirements_advanced.txt
+```
+### 3. Corre el agente
+```md  
+python main_integradov1.py
+```
 Scrapea datos frescos
 Limpia y procesa
 Genera reporte JSON + gráficos
@@ -114,7 +123,6 @@ Entra en modo interactivo (pregunta lo que quieras)
 │   ├── scraper_heuristicas.py
 │   ├── scraper_youtube.py
 │   ├── scraper_reddit.py
-│   └── scraper_x.py
 └── utils/
     ├── visualizacion.py
     └── downloader.py
