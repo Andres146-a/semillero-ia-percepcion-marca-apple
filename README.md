@@ -85,7 +85,13 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
     pip install -r requirements_advanced.txt
    ```
 ## Cómo correr
-### 1. Activa entorno virtual (opcional)
+
+### 1. Clonar repositorio:
+  ```md
+git clone https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple.git
+```
+
+### 2. Activa entorno virtual (opcional)
 python -m venv venv
    ```md  
 .\venv\Scripts\activate  # Windows
@@ -94,11 +100,11 @@ python -m venv venv
 source venv/bin/activate  # Linux/Mac
 ```
 
-### 2. Instala dependencias
+### 3. Instala dependencias
 ```md  
 pip install -r requirements_advanced.txt
 ```
-### 3. Corre el agente
+### 4. Corre el agente
 ```md  
 python main_integradov1.py
 ```
