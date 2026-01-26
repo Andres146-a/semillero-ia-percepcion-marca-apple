@@ -10,7 +10,7 @@
 [Ver demo en YouTube / Google Drive]  
 (Duración: ~8 minutos – incluye intro, explicación técnica, demo en vivo y conclusiones)
 
-**Repositorio**: [https://github.com/tu-usuario/semillero-ia-percepcion-marca-apple](https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple/tree/main)
+**Repositorio**: https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple
 
 ## Descripción del proyecto
 
