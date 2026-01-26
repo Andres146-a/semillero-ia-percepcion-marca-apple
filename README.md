@@ -4,11 +4,14 @@
 **Tema asignado**: Agente que analiza percepción de marca mediante web scraping de comentarios e interacciones en redes sociales y foros.
 
 **Integrantes**  
-- Matyas (@tu-github-username) – Desarrollador principal, scraping, RAG y LLM
+- Matyas Cañola Salazar (@Andres146-a)
+- José Jeremy Samaniego Lago
+- Cerezo Indio Cristian Ariel
+- Piza Lema Ricardo Arturo
 
 **Video de presentación**  
 [Ver demo en YouTube / Google Drive]  
-(Duración: ~8 minutos – incluye intro, explicación técnica, demo en vivo y conclusiones)
+
 
 **Repositorio**: https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple
 
@@ -77,12 +80,15 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
       ```md   
       ollama serve
       ```
-4. Dependencias:
-   ```bash
-    pip install -r requirements_advanced.txt
-   ```
+
 ## Cómo correr
-### 1. Activa entorno virtual (opcional)
+
+### 1. Clonar repositorio:
+  ```md
+git clone https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple.git
+```
+
+### 2. Activa entorno virtual (opcional)
 python -m venv venv
    ```md  
 .\venv\Scripts\activate  # Windows
@@ -91,11 +97,11 @@ python -m venv venv
 source venv/bin/activate  # Linux/Mac
 ```
 
-### 2. Instala dependencias
+### 3. Instala dependencias
 ```md  
 pip install -r requirements_advanced.txt
 ```
-### 3. Corre el agente
+### 4. Corre el agente
 ```md  
 python main_integradov1.py
 ```
@@ -105,27 +111,36 @@ Genera reporte JSON + gráficos
 Entra en modo interactivo (pregunta lo que quieras)
 
 ## Estructura del repositoriosemillero-ia-percepcion-marca-apple/
-```
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── main_integrado.py
+```text
+web-Scraping/
 ├── config/
 │   └── patrones.json
+├── detectors/
+│   └── detector_tipo.py
+├── drivers/
+│   └── msedgedriver.exe
+├── models/
+│   ├── datos_comunes.py
+│   └── __init__.py
 ├── processors/
 │   └── normalizador.py
 ├── rag/
 │   └── rag_manager.py
 ├── scrapers/
 │   ├── base.py
+│   ├── scraper_heuristicas.py
 │   ├── scraper_hibrido.py
 │   ├── scraper_patrones.py
-│   ├── scraper_heuristicas.py
-│   ├── scraper_youtube.py
 │   ├── scraper_reddit.py
-└── utils/
-    ├── visualizacion.py
-    └── downloader.py
+│   ├── scraper_selenium.py
+│   ├── scraper_youtubeV2.py
+│   └── scraper_youtubeV2v2.py
+├── utils/
+│   ├── downloader.py
+│   └── visualizacion.py
+├── main_integradov1.py
+├── README.md
+└── requirements_advanced.txt
 ```
 ## Cómo funciona (resumen técnico)
 
