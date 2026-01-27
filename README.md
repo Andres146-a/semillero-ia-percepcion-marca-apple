@@ -89,7 +89,10 @@ git clone https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple.git
 ```
 
 ### 2. Activa entorno virtual (obligatorio)
+   ```md
+
 python -m venv venv
+```
    ```md  
 .\venv\Scripts\activate  # Windows
 ```
