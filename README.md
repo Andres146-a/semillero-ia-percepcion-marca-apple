@@ -150,7 +150,8 @@ web-Scraping/
 │   └── visualizacion.py
 ├── main_integradov1.py
 ├── README.md
-└── requirements_advanced.txt
+└── requirements.txt
+└── requirements.lock.txt
 ```
 ## Cómo funciona (resumen técnico)
 
