@@ -101,9 +101,16 @@ source venv/bin/activate  # Linux/Mac
 ```
 
 ### 3. Instala dependencias
-```md  
-pip install -r requirements_advanced.txt
-```
+
+#### Recomendado:
+   ```md 
+pip install -r requirements.lock.txt
+   ```
+#### Minima
+   ```md 
+pip install -r requirements.txt
+   ```
+
 ### 4. Corre el agente
 ```md  
 python main_integradov1.py
