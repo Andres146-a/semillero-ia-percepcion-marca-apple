@@ -22,6 +22,7 @@ ragas_ready_sample_*.*
 *.json
 *.txt
 !requirements_advanced.txt
+!requirements.txt
 !requirements_lock.txt
 *.png
 *.log

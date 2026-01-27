@@ -13,11 +13,16 @@ from langchain_core.output_parsers import StrOutputParser
 
 from utils.visualizacion import generar_pie_sentiment, generar_wordcloud
 
+from langchain_core.prompts import PromptTemplate
+from langchain_core.runnables import RunnablePassthrough
+from langchain_core.output_parsers import StrOutputParser
 
-from langchain.memory import ConversationSummaryBufferMemory
-from langchain.chains import LLMChain
-from langchain.prompts import PromptTemplate
-from langchain_community.llms import Ollama
+
+from langchain_core.chat_history import InMemoryChatMessageHistory
+from langchain_core.runnables.history import RunnableWithMessageHistory
+
+from langchain_ollama import OllamaLLM
+
 
 #from scrapers.scraper_youtube import ScraperYouTube
 #from scrapers.scraper_redditV2 import ScraperReddit
@@ -385,14 +390,17 @@ def main():
     print(f"📁 Configurando RAGManager en: {persist_dir}")
     
     #Creación de memoria:
-    llm = Ollama(model=MODELO_OLLAMA, temperature=0.1)
-    # Memoria con resumen automático (mantiene ~2000-3000 tokens aprox)
-    memory = ConversationSummaryBufferMemory(
-        llm=llm,
-        max_token_limit=3600,           # ajusta según tu hardware
-        memory_key="chat_history",
-        return_messages=True
-    )
+    llm = OllamaLLM(model=MODELO_OLLAMA, temperature=0.1)
+
+    # Memoria nueva (LangChain 1.x): historial por sesión
+    _store = {}
+
+    def get_session_history(session_id: str):
+        if session_id not in _store:
+            _store[session_id] = InMemoryChatMessageHistory()
+        return _store[session_id]
+
+
     question_prompt = PromptTemplate(
             input_variables=["chat_history", "question", "context"],
             template="""
@@ -413,14 +421,16 @@ def main():
     )
 
     # Cadena para responder preguntas (con memoria)
-    chain = (
-        RunnablePassthrough.assign(
-            chat_history=lambda x: memory.load_memory_variables({})["chat_history"]
-        )
-        | question_prompt
-        | llm
-        | StrOutputParser()
-    )
+    base_chain = question_prompt | llm | StrOutputParser()
+
+    chain = RunnableWithMessageHistory(
+        base_chain,
+        get_session_history,
+        input_messages_key="question",      # la entrada del usuario en tu invoke
+        history_messages_key="chat_history" # coincide con tu PromptTemplate
+)
+
+
     
     # Inicializa RAGManager UNA SOLA VEZ
     rag = RAGManager(persist_directory=persist_dir)
@@ -1116,20 +1126,17 @@ def main():
             ])
         
         try:
-            respuesta = chain.invoke({
-                "question": pregunta,
-                "context": context_text
-            })
+            respuesta = chain.invoke(
+                {"question": pregunta, "context": context_text},
+                config={"configurable": {"session_id": "sesion_local"}}
+            )
+
             
             print("\r✅ Respuesta generada:")
             print(respuesta.strip())
             print("-"*80)
             
-            # Guardar en memoria
-            memory.save_context(
-                {"input": pregunta},
-                {"output": respuesta}
-            )
+           
             
         except Exception as e:
             print("\r❌ Error al generar respuesta:")
