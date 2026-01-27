@@ -23,7 +23,7 @@ ragas_ready_sample_*.*
 *.txt
 !requirements_advanced.txt
 !requirements.txt
-!requirements_lock.txt
+!requirements.lock.txt
 *.png
 *.log
 cache_descargas.json
