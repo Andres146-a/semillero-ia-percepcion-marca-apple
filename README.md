@@ -88,7 +88,7 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
 git clone https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple.git
 ```
 
-### 2. Activa entorno virtual (opcional)
+### 2. Activa entorno virtual (obligatorio)
 python -m venv venv
    ```md  
 .\venv\Scripts\activate  # Windows
