@@ -28,6 +28,14 @@ Este agente IA recolecta comentarios reales de usuarios en YouTube, Reddit, foro
 
 Además incluye un modo interactivo donde puedes preguntar en tiempo real (ej. "¿Qué opinan del precio de iPhone?", "¿Por qué algunos cambian a Android?").
 
+## Qué hace el agente
+
+- Recolecta comentarios públicos desde redes sociales y foros.
+- Elimina duplicados mediante técnicas exactas, fuzzy y semánticas.
+- Analiza la percepción de marca usando RAG y un LLM local.
+- Genera reportes estructurados (JSON/PDF) con hallazgos clave.
+- Permite interacción en tiempo real mediante preguntas en lenguaje natural.
+
 **Objetivo principal**  
 Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percepción de marca, todo con tecnología local y ética (sin compartir citas literales por privacidad).
 
@@ -113,7 +121,7 @@ pip install -r requirements.txt
 
 ### 4. Corre el agente
 ```md  
-python main_integradov1.py
+python src/main_integradov1.py
 ```
 Scrapea datos frescos
 Limpia y procesa
@@ -145,6 +153,8 @@ web-Scraping/
 │   ├── scraper_selenium.py
 │   ├── scraper_youtubeV2.py
 │   └── scraper_youtubeV2v2.py
+├── src/
+│   ├── main_integradov1.py
 ├── utils/
 │   ├── downloader.py
 │   └── visualizacion.py
