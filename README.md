@@ -52,6 +52,7 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
 
 4. **Demo interactivo**  
    Presentaciones en vivo: scraping rápido + preguntas en tiempo real + reporte PDF.
+   
 ## Diagramas
 
 ### Diagrama General
@@ -121,6 +122,8 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
 ### 1. Clonar repositorio:
   ```md
 git clone https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple.git
+
+cd semillero-ia-percepcion-marca-apple
 ```
 
 ### 2. Activa entorno virtual (obligatorio)
@@ -139,16 +142,22 @@ source venv/bin/activate  # Linux/Mac
 
 #### Recomendado:
    ```md 
-pip install -r requirements.lock.txt
+./venv/Scripts/python.exe -m pip install -r requirements.lock.txt
    ```
 #### Minima
    ```md 
-pip install -r requirements.txt
+./venv/Scripts/python.exe -m pip install -r requirements.txt
+
    ```
 
 ### 4. Corre el agente
-```md  
-python src/main_integradov1.py
+```md
+## Ejecución
+
+Ejecutar el proyecto desde la raíz del repositorio usando el entorno virtual:
+
+```bash
+./venv/Scripts/python.exe -m src.main_integradov1
 ```
 Scrapea datos frescos
 Limpia y procesa
