@@ -10,7 +10,7 @@
 - Piza Lema Ricardo Arturo
 
 **Video de presentación**  
-[Ver demo en YouTube / Google Drive]  
+https://drive.google.com/file/d/1jmi9ZYzuqgBVU0lQlT5F51elXIKSen9j/view?usp=sharing 
 
 
 **Repositorio**: https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple
