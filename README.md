@@ -122,19 +122,21 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
 ### 1. Clonar repositorio:
   ```md
 git clone https://github.com/Andres146-a/semillero-ia-percepcion-marca-apple.git
-
+```
+  ```md
 cd semillero-ia-percepcion-marca-apple
 ```
 
 ### 2. Activa entorno virtual (obligatorio)
-   ```md
-
+```md
 python -m venv venv
+```
 
-
+```md
 .\venv\Scripts\activate  # Windows
 ```
-```
+
+```md
 source venv/bin/activate  # Linux/Mac
 ```
 
