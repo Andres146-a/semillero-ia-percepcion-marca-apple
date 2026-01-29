@@ -54,13 +54,19 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
    Presentaciones en vivo: scraping rápido + preguntas en tiempo real + reporte PDF.
 
 ## Diagramas
+**Diagrama Genereal**
 <img width="8192" height="6682" alt="Apple Sentiment RAG Flow-2026-01-23-212701" src="https://github.com/user-attachments/assets/e5c1e9c0-2b18-4f1d-9673-948762d3cc7c" />
-
+**Fase 1**
 <img width="8192" height="2443" alt="Start Decision Options Flow-2026-01-23-212715" src="https://github.com/user-attachments/assets/5e9152d2-8b36-4ed5-9cc7-fafae5165818" />
+**Fase 2**
 <img width="2614" height="5305" alt="Calificación en SIUG Flow-2026-01-23-212729" src="https://github.com/user-attachments/assets/ebe08009-6fdf-45cc-843f-38abcc100d88" />
+**Fase 3**
 <img width="452" height="695" alt="image" src="https://github.com/user-attachments/assets/c0110632-ce4d-4493-b605-b84182fff3ff" />
+**Fase 4**
 <img width="327" height="675" alt="image" src="https://github.com/user-attachments/assets/f48e09ac-8830-4c55-8db3-440fc61352b3" />
+**Fase 5**
 <img width="699" height="706" alt="image" src="https://github.com/user-attachments/assets/7482324b-7626-487c-b242-9651a860b3c6" />
+**Fase 6**
 <img width="1212" height="559" alt="image" src="https://github.com/user-attachments/assets/d620d879-d4de-4212-acda-ceb68f180ab7" />
 
 
