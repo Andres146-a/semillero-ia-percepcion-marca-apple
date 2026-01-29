@@ -58,8 +58,11 @@ Detectar tempranamente quejas, tendencias y oportunidades de mejora en la percep
 
 <img width="8192" height="2443" alt="Start Decision Options Flow-2026-01-23-212715" src="https://github.com/user-attachments/assets/5e9152d2-8b36-4ed5-9cc7-fafae5165818" />
 <img width="2614" height="5305" alt="Calificación en SIUG Flow-2026-01-23-212729" src="https://github.com/user-attachments/assets/ebe08009-6fdf-45cc-843f-38abcc100d88" />
+<img width="452" height="695" alt="image" src="https://github.com/user-attachments/assets/c0110632-ce4d-4493-b605-b84182fff3ff" />
+<img width="327" height="675" alt="image" src="https://github.com/user-attachments/assets/f48e09ac-8830-4c55-8db3-440fc61352b3" />
+<img width="699" height="706" alt="image" src="https://github.com/user-attachments/assets/7482324b-7626-487c-b242-9651a860b3c6" />
+<img width="1212" height="559" alt="image" src="https://github.com/user-attachments/assets/d620d879-d4de-4212-acda-ceb68f180ab7" />
 
-<img width="2614" height="5305" alt="Calificación en SIUG Flow-2026-01-23-212738" src="https://github.com/user-attachments/assets/e643372a-7885-42a1-be2c-84724851d4dd" />
 
 
 ## Tecnologías utilizadas
