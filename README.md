@@ -130,8 +130,8 @@ cd semillero-ia-percepcion-marca-apple
    ```md
 
 python -m venv venv
-```
-   ```md  
+
+
 .\venv\Scripts\activate  # Windows
 ```
 ```
@@ -151,12 +151,11 @@ source venv/bin/activate  # Linux/Mac
    ```
 
 ### 4. Corre el agente
-```md
 ## Ejecución
-
+```md
 Ejecutar el proyecto desde la raíz del repositorio usando el entorno virtual:
 
-```bash
+
 ./venv/Scripts/python.exe -m src.main_integradov1
 ```
 Scrapea datos frescos
